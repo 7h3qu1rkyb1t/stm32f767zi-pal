@@ -6,3 +6,5 @@ Although it may contain some library functions to make things easy **Its not a H
 
 - `cd projects`
 - `make new PROJECT="<project name>"` by default it will create project in name of new
+
+**NOTE** : it was never meant to be library, i created this for making my projects easy. if anyone want to use it then just remove all projects froms projects folder and you can reuse them

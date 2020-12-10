@@ -1,3 +1,5 @@
 tools/SVDConv
 .ccls-cache/
+target/
+projects/*/target/
 

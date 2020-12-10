@@ -1,0 +1,16 @@
+[
+    {
+        "arguments": [
+            "arm-none-eabi-gcc",
+            "-c",
+            "-mcpu=cortex-m7",
+            "-mthumb",
+            "-std=gnu17",
+            "-O0",
+            "-Wall",
+            "startup.c"
+        ],
+        "directory": "/home/gireesh/playground/embedded/pal/drivers/include",
+        "file": "startup.c"
+    }
+]
