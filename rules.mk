@@ -3,7 +3,7 @@ CC=$(PREFIX)gcc
 LD=$(PREFIX)ld
 MARCH=cortex-m7
 
-# PROJECT_SRCS:=$(foreach DIR, $(PROJECT_SRC_DIR), $(shell find $(DIR) -name "*.c"))
+PROJECT_SRCS?:=$(foreach DIR, $(PROJECT_SRC_DIR), $(shell find $(DIR) -name "*.c"))
 PROJECT_OBJS:=$(addprefix $(PROJECT_TARGET)/build/, $(addsuffix .o, $(basename $(notdir $(PROJECT_SRCS)))))
 
 vpath %.h $(LIB_INCLUDE_DIR) $(PROJECT_INCLUDE_DIR)

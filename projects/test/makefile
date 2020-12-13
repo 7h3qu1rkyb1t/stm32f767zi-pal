@@ -1,7 +1,7 @@
 PROJECT:=$(shell basename $(CURDIR))
 MODE:=$(if $(filter no,$(DEBUG)),release,debug)
 
-# PROJECT_SRCS=main.c
+PROJECT_SRCS=main.c
 
 PROJECT_TARGET=$(CURDIR)/target/$(MODE)
 PROJECT_INCLUDE_DIR=$(CURDIR)/include
