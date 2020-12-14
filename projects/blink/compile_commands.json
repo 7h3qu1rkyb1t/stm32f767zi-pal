@@ -1,0 +1,56 @@
+[
+    {
+        "arguments": [
+            "arm-none-eabi-gcc",
+            "-c",
+            "-mcpu=cortex-m7",
+            "-mthumb",
+            "-std=gnu17",
+            "-Wall",
+            "-I",
+            "/home/gireesh/playground/embedded/pal/projects/blink/../../lib/include",
+            "-nostdlib",
+            "-o",
+            "/home/gireesh/playground/embedded/pal/projects/blink/../../lib/target/debug/syscalls.o",
+            "../../lib/src/syscalls.c"
+        ],
+        "directory": "/home/gireesh/playground/embedded/pal/projects/blink",
+        "file": "../../lib/src/syscalls.c"
+    },
+    {
+        "arguments": [
+            "arm-none-eabi-gcc",
+            "-c",
+            "-mcpu=cortex-m7",
+            "-mthumb",
+            "-std=gnu17",
+            "-Wall",
+            "-I",
+            "/home/gireesh/playground/embedded/pal/projects/blink/../../lib/include",
+            "-nostdlib",
+            "-o",
+            "/home/gireesh/playground/embedded/pal/projects/blink/../../lib/target/debug/startup.o",
+            "../../lib/src/startup.c"
+        ],
+        "directory": "/home/gireesh/playground/embedded/pal/projects/blink",
+        "file": "../../lib/src/startup.c"
+    },
+    {
+        "arguments": [
+            "arm-none-eabi-gcc",
+            "-c",
+            "-mcpu=cortex-m7",
+            "-mthumb",
+            "-std=gnu17",
+            "-Wall",
+            "-I",
+            "/home/gireesh/playground/embedded/pal/projects/blink/../../lib/include",
+            "-nostdlib",
+            "-o",
+            "/home/gireesh/playground/embedded/pal/projects/blink/../../lib/target/debug/abc.o",
+            "../../lib/src/test/abc.c"
+        ],
+        "directory": "/home/gireesh/playground/embedded/pal/projects/blink",
+        "file": "../../lib/src/test/abc.c"
+    }
+]

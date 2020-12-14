@@ -1,3 +1,0 @@
-/home/gireesh/playground/embedded/pal/projects/blink/../../lib/src/startup.c
-/home/gireesh/playground/embedded/pal/projects/blink/../../lib/src/syscalls.c
-/home/gireesh/playground/embedded/pal/projects/blink/../../lib/src/test/abc.c

@@ -8,17 +8,29 @@ MEMORY{
 }
 
 SECTIONS{
+    start_text = .;
+
     .text : {
         *(iv_table)
         *(.text)
         *(.rodata)
     } > FLASH
 
+    end_text = .;
+    . = ALIGN(2);
+
     .data : {
+    start_data = .;
+    la_data = LOADADDR(.data);
         *(.data)
-    } > SRAM1 AT> FLASH
+    end_data = .;
+    }> SRAM1 AT> FLASH
+
+    . = ALIGN(2);
 
     .bss :{
+    start_bss = .;
         *(.bss)
-    } > SRAM1 AT> FLASH
+    end_bss = .;
+    } > SRAM1 
 }

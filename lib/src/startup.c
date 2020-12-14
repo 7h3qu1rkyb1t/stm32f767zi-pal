@@ -1,11 +1,18 @@
 #include<stdint.h>
 
-#define SRAM1_START         0x20020000
+extern uint8_t  start_data;
+extern uint8_t  end_data;
+extern uint8_t  start_bss;
+extern uint8_t  end_bss;
+extern uint8_t  la_data;
+#define SRAM1_START         0x20020000U
 #define SRAM1_SIZE          (368*1024)
-#define SRAM2_START         0x2007C000
+#define SRAM2_START         0x2007C000U
 #define SRAM2_SIZE          (16*1024)
 
 #define STACK_START         (SRAM1_START + SRAM1_SIZE)
+
+extern int main(void);
 
 // exceptions 
 void Default_handler(void);
@@ -266,9 +273,20 @@ uint32_t isr_vectors[] __attribute__((section ("iv_table"))) = {
 
 void Reset_handler(void){
     // copy .data into SRAM
+    uint32_t size_of_data = &end_data - &start_data;
+    uint32_t size_of_bss = &end_bss - &start_bss;
+    uint8_t* start_sram = (uint8_t*)SRAM1_START;
+    uint8_t* d_data = &la_data;
+    for(int i = 0; i<size_of_data; i++){
+        *start_sram++= *d_data++;
+    }
     // initialize .bss to 0
-    // if used call init
-    // call main
+    for(int i = 0; i<size_of_bss; i++){
+        *start_sram++= 0;
+    }
+    // if std used call init
+    /* call main */
+    main();
 }
 
 void Default_handler(void){

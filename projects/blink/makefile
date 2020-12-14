@@ -8,6 +8,9 @@ PROJECT_INCLUDE_DIR=$(CURDIR)/include
 PROJECT_SRC_DIR=$(CURDIR)/src
 LIB_DIR=$(CURDIR)/../../lib
 PROJECT_DEP_DIR=$(PROJECT_TARGET)/dep
+PROJECT_BUILD_DIR=$(PROJECT_TARGET)/build
+
+GDB_CONFIG=openocd.gdb
 
 
 include $(LIB_DIR)/makefile

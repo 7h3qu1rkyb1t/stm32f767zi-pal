@@ -1,9 +1,10 @@
 PREFIX=arm-none-eabi-
 CC=$(PREFIX)gcc
 LD=$(PREFIX)ld
+GDB=$(PREFIX)gdb
 MARCH=cortex-m7
 
-PROJECT_SRCS?:=$(foreach DIR, $(PROJECT_SRC_DIR), $(shell find $(DIR) -name "*.c"))
+PROJECT_SRCS?=$(foreach DIR, $(PROJECT_SRC_DIR), $(shell find $(DIR) -name "*.c"))
 PROJECT_OBJS:=$(addprefix $(PROJECT_TARGET)/build/, $(addsuffix .o, $(basename $(notdir $(PROJECT_SRCS)))))
 
 vpath %.h $(LIB_INCLUDE_DIR) $(PROJECT_INCLUDE_DIR)
@@ -21,22 +22,32 @@ LDFLAGS = -T ../../linker.ld -nostdlib -Map=$(PROJECT_TARGET)/main.map
 PROJECT_DEP_FLAGS=-MT $@ -MMD -MP -MF $(PROJECT_DEP_DIR)/$*.d
 
 
-.PHONY: clean test
+.PHONY: clean test 
 
 all: $(PROJECT).elf
 
 test:
-	@echo $(LIB_SRC_DIR)
+	@echo ==========================================================================
+	@echo project target dir: $(PROJECT_TARGET) 
+	@echo project dep dir: $(PROJECT_DEP_DIR)
+	@echo project dep flags: $(PROJECT_DEP_FLAGS)
+	@echo project depfiles: $(PROJECT_DEPFILES)
+	@echo project srcs: $(PROJECT_SRCS)
+	@echo dep creation: $(addsuffix .d, $(notdir $(basename $(PROJECT_SRCS))))
+	@echo ==========================================================================
 
-$(PROJECT_TARGET)/build/%.o: %.c $(PROJECT_DEP_DIR)/%.d\
-		| $(PROJECT_TARGET) $(PROJECT_DEP_DIR)
+
+
+$(PROJECT_TARGET)/build/%.o: %.c $(PROJECT_DEP_DIR)/%.d \
+	| $(PROJECT_BUILD_DIR) $(PROJECT_DEP_DIR)
 	$(CC) $(CFLAGS) $(PROJECT_DEP_FLAGS) -o $@ $<
 
 $(PROJECT).elf: $(LIB_OBJS) $(PROJECT_OBJS) | $(LIB_TARGET) $(PROJECT_TARGET)
 	$(LD) $(LDFLAGS) -o $(PROJECT_TARGET)/$@ $^
 
-PROJECT_DEPFILES := $(PROJECT_SRCS:%.c=$(PROJECT_DEP_DIR)/%.d)
-$(PROJECT_DEPFILES):
+# PROJECT_DEPFILES := $(PROJECT_SRCS:%.c=$(PROJECT_DEP_DIR)/%.d)
+PROJECT_DEPFILES:= $(addprefix $(PROJECT_DEP_DIR)/, $(addsuffix .d, $(notdir $(basename $(PROJECT_SRCS)))))
+$(PROJECT_DEPFILES): |$(PROJECT_DEP_DIR)
 
 include $(wildcard $(PROJECT_DEPFILES))
 
@@ -50,6 +61,9 @@ $(PROJECT_TARGET):
 $(PROJECT_DEP_DIR):
 	@mkdir -p $@
 
+$(PROJECT_BUILD_DIR):
+	@mkdir -p $@
+
 $(LIB_DEP_DIR):
 	@mkdir -p $@
 
@@ -58,3 +72,6 @@ clean:
 
 clean_all:
 	rm -rf $(PROJECT_TARGET) $(LIB_TARGET)
+
+flash: $(PROJECT).elf $(GDB_CONFIG)
+	$(GDB) -q -x $(GDB_CONFIG) $<

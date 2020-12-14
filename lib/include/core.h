@@ -27,6 +27,9 @@
   #define __IOM  volatile
 #endif
 
+#define     SET     1
+#define     RESET   0
+
 
 
 /* end of header */
