@@ -1,0 +1,22 @@
+[
+    {
+        "arguments": [
+            "arm-none-eabi-gcc",
+            "-c",
+            "-mcpu=cortex-m7",
+            "-mthumb",
+            "-std=gnu17",
+            "-Wall",
+            "-I",
+            "/home/gireesh/playground/embedded/pal/projects/lcd/../../lib/include",
+            "-I",
+            "/home/gireesh/playground/embedded/pal/projects/lcd/include",
+            "-nostdlib",
+            "-o",
+            "/home/gireesh/playground/embedded/pal/projects/lcd/target/debug/build/main.o",
+            "src/main.c"
+        ],
+        "directory": "/home/gireesh/playground/embedded/pal/projects/lcd",
+        "file": "src/main.c"
+    }
+]
