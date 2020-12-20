@@ -2,6 +2,7 @@ PREFIX=arm-none-eabi-
 CC=$(PREFIX)gcc
 LD=$(PREFIX)ld
 GDB=$(PREFIX)gdb
+SIZE=$(PREFIX)size
 MARCH=cortex-m7
 
 SRCS?=$(foreach DIR, $(SRC_DIR), $(shell find $(DIR) -name "*.c"))
@@ -29,6 +30,7 @@ DEP_FILES:= $(addprefix $(DEP_DIR)/, $(addsuffix .d, $(notdir $(basename $(SRCS)
 .PHONY: clean test  all
 
 all: $(PROJECT).elf
+	@$(SIZE) $(TARGET_DIR)/$<
 
 test:
 	@echo ==========================================================================
@@ -47,10 +49,11 @@ test:
 
 $(TARGET_DIR)/build/%.o: %.c $(DEP_DIR)/%.d \
 	| $(BUILD_DIR) $(DEP_DIR)
-	@echo generating %.o
+	@echo $(CC) $@
 	@$(CC) $(CFLAGS) $(DEP_FLAGS) -o $@ $<
 
 $(PROJECT).elf: $(addsuffix .a, $(LIBS)) $(OBJS) | $(TARGET_DIR)
+	@echo $(LD) $@
 	@$(LD) $(LDFLAGS) -o $(TARGET_DIR)/$@ $^
 
 $(DEP_FILES): |$(DEP_DIR)
@@ -74,4 +77,4 @@ clean_all:
 	rm -rf $(TARGET_DIR) $(LIB_TARGET)
 
 flash: $(PROJECT).elf $(GDB_CONFIG)
-	$(GDB) -q -x $(GDB_CONFIG) $<
+	$(GDB) -q -x $(GDB_CONFIG) $(TARGET_DIR)/$<

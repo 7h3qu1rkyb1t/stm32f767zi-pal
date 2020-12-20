@@ -19,9 +19,11 @@ test:
 	@echo lib target = $(TARGET)
 
 %.a: $(OBJS) | $(TARGET)
+	@echo $(AR) $<
 	@$(AR) $(AR_FLAGS)  $^
 
 %.o: %.c
+	@echo $(CC) $<
 	@$(CC) $(CFLAGS) -o $@ $<
 
 $(TARGET):
