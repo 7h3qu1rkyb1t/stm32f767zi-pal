@@ -2,7 +2,7 @@ TARGET=$(LIB_DIR)/target/$(MODE)
 AR=arm-none-eabi-ar
 CC=arm-none-eabi-gcc
 MARCH?=cortex-m7
-AR_FLAGS=rc $(TARGET)/$@
+AR_FLAGS=rc 
 CFLAGS=-mcpu=$(MARCH) -mthumb -std=gnu17  -Wall -I $(INCLUDE_DIR)\
 		   -nostdlib -g -c
 
@@ -12,8 +12,9 @@ vpath %.c $(SRC_DIRS)
 
 .PHONY: all clean test
 
-all:$(LIB).a
-	
+all:$(TARGET)/$(LIB).a
+	@echo =========$(notdir $<)===============+
+	@$(AR) t $<
 
 test:
 	@echo src_dir = $(SRC_DIRS)
@@ -21,9 +22,9 @@ test:
 	@echo objs = $(OBJS)
 	@echo lib target = $(TARGET)
 
-%.a: $(OBJS) | $(TARGET)
+$(TARGET)/%.a: $(OBJS) | $(TARGET)
 	@echo $(AR) $<
-	@$(AR) $(AR_FLAGS)  $^
+	@$(AR) $(AR_FLAGS) $@ $^
 
 %.o: %.c
 	@echo $(CC) $<

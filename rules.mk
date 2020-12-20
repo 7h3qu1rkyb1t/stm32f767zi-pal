@@ -29,8 +29,9 @@ DEP_FILES:= $(addprefix $(DEP_DIR)/, $(addsuffix .d, $(notdir $(basename $(SRCS)
 
 .PHONY: clean test  all
 
-all: $(PROJECT).elf
-	@$(SIZE) $(TARGET_DIR)/$<
+all: $(TARGET_DIR)/$(PROJECT).elf
+	@echo ============$(notdir $<)=========================
+	@$(SIZE) $<
 
 test:
 	@echo ==========================================================================
@@ -49,12 +50,12 @@ test:
 
 $(TARGET_DIR)/build/%.o: %.c $(DEP_DIR)/%.d \
 	| $(BUILD_DIR) $(DEP_DIR)
-	@echo $(CC) $@
+	@echo $(CC) $(notdir $@)
 	@$(CC) $(CFLAGS) $(DEP_FLAGS) -o $@ $<
 
-$(PROJECT).elf: $(addsuffix .a, $(LIBS)) $(OBJS) | $(TARGET_DIR)
-	@echo $(LD) $@
-	@$(LD) $(LDFLAGS) -o $(TARGET_DIR)/$@ $^
+$(TARGET_DIR)/$(PROJECT).elf: $(addsuffix .a, $(LIBS)) $(OBJS) | $(TARGET_DIR)
+	@echo $(LD) $(notdir $@)
+	@$(LD) $(LDFLAGS) -o $@ $^
 
 $(DEP_FILES): |$(DEP_DIR)
 
@@ -77,4 +78,4 @@ clean_all:
 	rm -rf $(TARGET_DIR) $(LIB_TARGET)
 
 flash: $(PROJECT).elf $(GDB_CONFIG)
-	$(GDB) -q -x $(GDB_CONFIG) $(TARGET_DIR)/$<
+	$(GDB) -q -x $(GDB_CONFIG) $<
