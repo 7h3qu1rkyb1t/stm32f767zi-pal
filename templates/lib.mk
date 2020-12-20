@@ -1,5 +1,5 @@
 # update this
-LIB:=lcd
+LIB:=
 INCLUDE_DIR+=include
 SRC_DIR=src
 

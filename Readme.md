@@ -10,7 +10,7 @@ Although it may contain some library functions to make things easy **Its not a H
 ### Creating a new project
 
 To add own library create a new directory in lib with the name of your lib.
-- copy "templates/makelib" to your lib directory and rename it to make file
+- copy "templates/lib.mk" to your lib directory and rename it to make file
 
 **NOTE** : it was never meant to be library, i created this for making my projects easy. if anyone want to use it then just remove all projects froms projects folder and you can reuse them
 
