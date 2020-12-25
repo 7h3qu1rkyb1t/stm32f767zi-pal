@@ -1,22 +1,27 @@
 [
-    {
-        "arguments": [
-            "arm-none-eabi-gcc",
-            "-c",
-            "-mcpu=cortex-m7",
-            "-mthumb",
-            "-std=gnu17",
-            "-Wall",
-            "-I",
-            "/home/gireesh/playground/embedded/pal/projects/lcd/../../lib/include",
-            "-I",
-            "/home/gireesh/playground/embedded/pal/projects/lcd/include",
-            "-nostdlib",
-            "-o",
-            "/home/gireesh/playground/embedded/pal/projects/lcd/target/debug/build/main.o",
-            "src/main.c"
-        ],
-        "directory": "/home/gireesh/playground/embedded/pal/projects/lcd",
-        "file": "src/main.c"
-    }
+ {
+  "directory": "/home/gireesh/playground/embedded/pal/projects/lcd",
+  "arguments": [
+   "arm-none-eabi-gcc",
+   "-mcpu=cortex-m7",
+   "-mthumb",
+   "-std=gnu17",
+   "-g",
+   "-Wall",
+   "-I/home/gireesh/playground/embedded/pal/projects/lcd/include",
+   "-I/home/gireesh/playground/embedded/pal/projects/lcd/../../lib/pal/include",
+   "-nostdlib",
+   "-c",
+   "-MT",
+   "/home/gireesh/playground/embedded/pal/projects/lcd/target/debug/build/main.o",
+   "-MMD",
+   "-MP",
+   "-MF",
+   "/home/gireesh/playground/embedded/pal/projects/lcd/target/debug/dep/main.d",
+   "-o",
+   "/home/gireesh/playground/embedded/pal/projects/lcd/target/debug/build/main.o",
+   "/home/gireesh/playground/embedded/pal/projects/lcd/src/main.c"
+  ],
+  "file": "/home/gireesh/playground/embedded/pal/projects/lcd/src/main.c"
+ }
 ]
