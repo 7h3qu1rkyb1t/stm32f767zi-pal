@@ -26,7 +26,6 @@ uint8_t read_control(void);
 
 #define write_command(command) ({\
         while(check_status());\
-#ifndef lcd_4_bit\
         GPIOG->ODR = ( (command << data_pos) | GPIO_ODR_ODR15_Msk);\
         delay(550);\
         GPIOG->BSRR=0xffff0000;\

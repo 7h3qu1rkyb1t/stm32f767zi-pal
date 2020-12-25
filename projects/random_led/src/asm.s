@@ -65,6 +65,9 @@ delay:
     ldr r5, [r4, 0]
     orr r5, 1                   // enable systick
     str r5, [r4, 0]
-    wfi
+delay_loop:
+    ldr r5, [r4, 0]
+    ands r5, (1<<16)             // count flag
+    beq delay_loop              // if the result is 0 then flag is not set so loop
     pop {r4, r5}
     bx lr

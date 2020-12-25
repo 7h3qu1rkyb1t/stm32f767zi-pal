@@ -1,3 +1,4 @@
+!openocd&
 target extended-remote :3333
 
 # print demangled symbols
@@ -38,4 +39,4 @@ monitor arm semihosting enable
 load
 
 # start the process but immediately halt the processor
-quit
+# quit

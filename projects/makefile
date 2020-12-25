@@ -6,5 +6,3 @@ new:
 	@cp ../templates/project.mk $(PROJECT)/makefile
 	@cp ../templates/openocd.{cfg,gdb} $(PROJECT)/
 	@touch $(PROJECT)/src/main.c
-
-

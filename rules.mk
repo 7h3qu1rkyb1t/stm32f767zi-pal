@@ -97,5 +97,5 @@ debug: $(PROJECT).elf $(GDB_CONFIG)
 	$(GDB) -q -x $(GDB_CONFIG) $<  
 
 flash: $(PROJECT).bin
-	pkill openocd
+	pkill openocd || true
 	$(FLASH) $(FL_FLAGS) 

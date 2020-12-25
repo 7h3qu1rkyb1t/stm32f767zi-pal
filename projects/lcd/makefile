@@ -1,16 +1,18 @@
 PROJECT:=$(shell basename $(CURDIR))
-MODE:=$(if $(filter no,$(DEBUG)),release,debug)
-
-# uncomment bellow line if you want to manually add sources
 # PROJECT_SRCS=main.c
 
-PROJECT_TARGET=$(CURDIR)/target/$(MODE)
-PROJECT_INCLUDE_DIR=$(CURDIR)/include
-PROJECT_SRC_DIR=$(CURDIR)/src
+# needs to be edited
+TARGET_DIR=$(CURDIR)/target/$(MODE)
+INCLUDE_DIR=$(CURDIR)/include
+SRC_DIR=$(CURDIR)/src
 LIB_DIR=$(CURDIR)/../../lib
-PROJECT_DEP_DIR=$(PROJECT_TARGET)/dep
+LIBS=pal
+
+# no need to change
+MODE:=$(if $(filter no,$(DEBUG)),release,debug)
+DEP_DIR=$(TARGET_DIR)/dep
+BUILD_DIR=$(TARGET_DIR)/build
 GDB_CONFIG=openocd.gdb
 
 
-include $(LIB_DIR)/makefile
 include ../../rules.mk
