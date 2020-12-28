@@ -122,6 +122,8 @@ run:
     bl write_data
     mov r0, 0x43
     bl write_data
+    mov r0, 0x45
+    bl write_data
 loop:
     b loop
 
