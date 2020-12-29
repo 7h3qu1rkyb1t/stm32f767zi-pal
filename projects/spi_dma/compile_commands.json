@@ -1,0 +1,27 @@
+[
+ {
+  "directory": "/home/gireesh/playground/embedded/pal/projects/spi_dma",
+  "arguments": [
+   "arm-none-eabi-gcc",
+   "-mcpu=cortex-m7",
+   "-mthumb",
+   "-std=gnu17",
+   "-g",
+   "-Wall",
+   "-I/home/gireesh/playground/embedded/pal/projects/spi_dma/include",
+   "-I/home/gireesh/playground/embedded/pal/projects/spi_dma/../../lib/pal/include",
+   "-nostdlib",
+   "-c",
+   "-MT",
+   "/home/gireesh/playground/embedded/pal/projects/spi_dma/target/debug/build/main.o",
+   "-MMD",
+   "-MP",
+   "-MF",
+   "/home/gireesh/playground/embedded/pal/projects/spi_dma/target/debug/dep/main.d",
+   "-o",
+   "/home/gireesh/playground/embedded/pal/projects/spi_dma/target/debug/build/main.o",
+   "/home/gireesh/playground/embedded/pal/projects/spi_dma/src/main.c"
+  ],
+  "file": "/home/gireesh/playground/embedded/pal/projects/spi_dma/src/main.c"
+ }
+]
