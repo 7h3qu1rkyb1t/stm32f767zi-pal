@@ -8,8 +8,8 @@ OC=$(PREFIX)objcopy
 FLASH=st-flash
 MARCH=cortex-m7
 
-SRCS?=$(foreach DIR, $(SRC_DIR), $(shell find $(DIR) -name "*.c"))
-AS_FILES?=$(foreach DIR, $(SRC_DIR), $(shell find $(DIR) -name "*.s"))
+SRCS+=$(foreach DIR, $(SRC_DIR), $(shell find $(DIR) -name "*.c"))
+AS_FILES+=$(foreach DIR, $(SRC_DIR), $(shell find $(DIR) -name "*.s"))
 OBJS:=$(addprefix $(BUILD_DIR)/, $(addsuffix .o, $(basename $(notdir $(SRCS)))))
 OBJS+=$(addprefix $(BUILD_DIR)/, $(addsuffix .o, $(basename $(notdir $(AS_FILES)))))
 
@@ -27,8 +27,8 @@ vpath %.a $(LIB_TARGET)
 vpath %.bin $(TARGET_DIR)
 
 CFLAGS =  -mcpu=$(MARCH) -mthumb -std=gnu17 -g -Wall \
-		  $(addprefix -I, $(INCLUDE_DIR)) -nostdlib -c 
-LDFLAGS = -T ../../linker.ld -nostdlib -Map=$(TARGET_DIR)/main.map
+		  $(addprefix -I, $(INCLUDE_DIR)) -nostdlib -c -mfpu=fpv5-d16 -mfloat-abi=hard
+LDFLAGS = -T ../../linker.ld -nostdlib -Map=$(TARGET_DIR)/main.map 
 DEP_FLAGS=-MT $@ -MMD -MP -MF $(DEP_DIR)/$*.d
 AFLAGS= -mcpu=$(MARCH) -mthumb -g --warn -c
 DEP_FILES:= $(addprefix $(DEP_DIR)/, $(addsuffix .d, $(notdir $(basename $(SRCS)))))
@@ -53,6 +53,7 @@ test:
 	@echo dep creation: $(addsuffix .d, $(notdir $(basename $(SRCS))))
 	@echo cflags: $(CFLAGS)
 	@echo include directories: $(INCLUDE_DIR)
+	@echo heapdir:  $(FREERTOS_DIR)/Source/portable/MemMang 
 	@echo ==========================================================================
 
 
@@ -60,7 +61,7 @@ test:
 $(TARGET_DIR)/build/%.o: %.c $(DEP_DIR)/%.d \
 	| $(BUILD_DIR) $(DEP_DIR)
 	@echo $(CC) $(notdir $@)
-	@$(CC) $(CFLAGS) $(DEP_FLAGS) -o $@ $<
+	$(CC) $(CFLAGS) $(DEP_FLAGS) -o $@ $<
 
 $(TARGET_DIR)/build/%.o: %.s | $(BUILD_DIR) 
 	@echo $(AS) $(notdir $@)
