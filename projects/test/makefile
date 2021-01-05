@@ -6,7 +6,7 @@ TARGET_DIR=$(CURDIR)/target/$(MODE)
 INCLUDE_DIR=$(CURDIR)/include
 SRC_DIR=$(CURDIR)/src
 LIB_DIR=$(CURDIR)/../../lib
-LIBS=
+LIBS= pal lcd
 
 # no need to change
 MODE:=$(if $(filter no,$(DEBUG)),release,debug)

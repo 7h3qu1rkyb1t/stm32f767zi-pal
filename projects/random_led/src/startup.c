@@ -1,7 +1,4 @@
 #include<stdint.h>
-void vPortSVCHandler(void);
-void xPortPendSVHandler(void);
-void xPortSysTickHandler(void);
 
 extern uint8_t  start_data;
 extern uint8_t  end_data;
@@ -155,11 +152,11 @@ uint32_t isr_vectors[] __attribute__((section ("iv_table"))) = {
     (uint32_t) 0,                           // Reserved
     (uint32_t) 0,                           // Reserved
     (uint32_t) 0,                           // Reserved
-    (uint32_t) vPortSVCHandler,
-    (uint32_t) Debug_Monitor_handler,
+    (uint32_t)SVCall_handler,
+    (uint32_t)Debug_Monitor_handler,
     (uint32_t) 0,                           // Reserved
-    (uint32_t) xPortPendSVHandler,
-    (uint32_t) xPortSysTickHandler,
+    (uint32_t)PendSV_handler,
+    (uint32_t)SysTick_handler,
 	(uint32_t) WWDG_handler                 ,
 	(uint32_t) PVD_handler                  ,
 	(uint32_t) TAMP_STAMP_handler           ,
@@ -295,10 +292,3 @@ void Reset_handler(void){
 void Default_handler(void){
     while(1);
 }
-
-
-
-
-
-
-

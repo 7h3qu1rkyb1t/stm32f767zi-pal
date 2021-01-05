@@ -1,0 +1,60 @@
+[
+ {
+  "directory": "/home/gireesh/playground/embedded/pal/projects/test",
+  "arguments": [
+   "arm-none-eabi-gcc",
+   "-mcpu=cortex-m7",
+   "-mthumb",
+   "-std=gnu17",
+   "-g",
+   "-Wall",
+   "-specs=nano.specs",
+   "-I/home/gireesh/playground/embedded/pal/projects/test/include",
+   "-I/home/gireesh/playground/embedded/pal/projects/test/../../lib/pal/include",
+   "-I/home/gireesh/playground/embedded/pal/projects/test/../../lib/lcd/include",
+   "-nostdlib",
+   "-c",
+   "-mfpu=fpv5-d16",
+   "-mfloat-abi=hard",
+   "-MT",
+   "/home/gireesh/playground/embedded/pal/projects/test/target/debug/build/startup.o",
+   "-MMD",
+   "-MP",
+   "-MF",
+   "/home/gireesh/playground/embedded/pal/projects/test/target/debug/dep/startup.d",
+   "-o",
+   "/home/gireesh/playground/embedded/pal/projects/test/target/debug/build/startup.o",
+   "/home/gireesh/playground/embedded/pal/projects/test/src/startup.c"
+  ],
+  "file": "/home/gireesh/playground/embedded/pal/projects/test/src/startup.c"
+ },
+ {
+  "directory": "/home/gireesh/playground/embedded/pal/projects/test",
+  "arguments": [
+   "arm-none-eabi-gcc",
+   "-mcpu=cortex-m7",
+   "-mthumb",
+   "-std=gnu17",
+   "-g",
+   "-Wall",
+   "-specs=nano.specs",
+   "-I/home/gireesh/playground/embedded/pal/projects/test/include",
+   "-I/home/gireesh/playground/embedded/pal/projects/test/../../lib/pal/include",
+   "-I/home/gireesh/playground/embedded/pal/projects/test/../../lib/lcd/include",
+   "-nostdlib",
+   "-c",
+   "-mfpu=fpv5-d16",
+   "-mfloat-abi=hard",
+   "-MT",
+   "/home/gireesh/playground/embedded/pal/projects/test/target/debug/build/main.o",
+   "-MMD",
+   "-MP",
+   "-MF",
+   "/home/gireesh/playground/embedded/pal/projects/test/target/debug/dep/main.d",
+   "-o",
+   "/home/gireesh/playground/embedded/pal/projects/test/target/debug/build/main.o",
+   "/home/gireesh/playground/embedded/pal/projects/test/src/main.c"
+  ],
+  "file": "/home/gireesh/playground/embedded/pal/projects/test/src/main.c"
+ }
+]
