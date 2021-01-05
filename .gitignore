@@ -1,6 +1,7 @@
 tools/SVDConv
 .ccls-cache/
 projects/*/target/
+projects/test
 lib/target/
 *.[oa]
 .build/
