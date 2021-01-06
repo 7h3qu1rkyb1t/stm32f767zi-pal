@@ -7,6 +7,7 @@ SRC_DIR=src
 LIB_DIR?=..
 BUILD_DIR=$(CURDIR)/.build
 MODE?=debug
+LIBS=
 # need to find recursively if there are any multiple directories are there
 SRC_DIRS:=$(shell find $(SRC_DIR) -type d -print | tr '\012' ' ' | sed 's/:$$//')
 SRCS:=$(foreach DIR, $(SRC_DIRS), $(shell find $(DIR) -name "*.c"))

@@ -5,7 +5,10 @@ LD=$(PREFIX)ld
 AR=$(PREFIX)ar
 MARCH?=cortex-m7
 AR_FLAGS=rc 
-CFLAGS=-mcpu=$(MARCH) -mthumb -std=gnu17  -Wall -I $(INCLUDE_DIR)\
+
+INCLUDE_DIR+=$(addprefix $(LIB_DIR)/, $(addsuffix /include, $(LIBS)))
+
+CFLAGS=-mcpu=$(MARCH) -mthumb -std=gnu17  -Wall $(addprefix -I, $(INCLUDE_DIR))\
 		   -nostdlib -g -c -mfpu=fpv5-d16 -mfloat-abi=hard
 AFLAGS= -mcpu=$(MARCH) -mthumb -g --warn -c
 
