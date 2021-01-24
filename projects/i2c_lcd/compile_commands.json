@@ -1,0 +1,58 @@
+[
+ {
+  "directory": "/home/gireesh/playground/embedded/pal/projects/i2c_lcd",
+  "arguments": [
+   "arm-none-eabi-gcc",
+   "-mcpu=cortex-m7",
+   "-mthumb",
+   "-std=gnu17",
+   "-g",
+   "-Wall",
+   "-specs=nano.specs",
+   "-I/home/gireesh/playground/embedded/pal/projects/i2c_lcd/include",
+   "-I/home/gireesh/playground/embedded/pal/projects/i2c_lcd/../../lib/pal/include",
+   "-nostdlib",
+   "-c",
+   "-mfpu=fpv5-d16",
+   "-mfloat-abi=hard",
+   "-MT",
+   "/home/gireesh/playground/embedded/pal/projects/i2c_lcd/target/debug/build/startup.o",
+   "-MMD",
+   "-MP",
+   "-MF",
+   "/home/gireesh/playground/embedded/pal/projects/i2c_lcd/target/debug/dep/startup.d",
+   "-o",
+   "/home/gireesh/playground/embedded/pal/projects/i2c_lcd/target/debug/build/startup.o",
+   "/home/gireesh/playground/embedded/pal/projects/i2c_lcd/src/startup.c"
+  ],
+  "file": "/home/gireesh/playground/embedded/pal/projects/i2c_lcd/src/startup.c"
+ },
+ {
+  "directory": "/home/gireesh/playground/embedded/pal/projects/i2c_lcd",
+  "arguments": [
+   "arm-none-eabi-gcc",
+   "-mcpu=cortex-m7",
+   "-mthumb",
+   "-std=gnu17",
+   "-g",
+   "-Wall",
+   "-specs=nano.specs",
+   "-I/home/gireesh/playground/embedded/pal/projects/i2c_lcd/include",
+   "-I/home/gireesh/playground/embedded/pal/projects/i2c_lcd/../../lib/pal/include",
+   "-nostdlib",
+   "-c",
+   "-mfpu=fpv5-d16",
+   "-mfloat-abi=hard",
+   "-MT",
+   "/home/gireesh/playground/embedded/pal/projects/i2c_lcd/target/debug/build/main.o",
+   "-MMD",
+   "-MP",
+   "-MF",
+   "/home/gireesh/playground/embedded/pal/projects/i2c_lcd/target/debug/dep/main.d",
+   "-o",
+   "/home/gireesh/playground/embedded/pal/projects/i2c_lcd/target/debug/build/main.o",
+   "/home/gireesh/playground/embedded/pal/projects/i2c_lcd/src/main.c"
+  ],
+  "file": "/home/gireesh/playground/embedded/pal/projects/i2c_lcd/src/main.c"
+ }
+]
