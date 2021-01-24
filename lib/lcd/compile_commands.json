@@ -1,0 +1,30 @@
+[
+ {
+  "directory": "/home/gireesh/playground/embedded/pal/lib/lcd",
+  "arguments": [
+   "arm-none-eabi-gcc",
+   "-mcpu=cortex-m7",
+   "-mthumb",
+   "-std=gnu17",
+   "-Wall",
+   "-Iinclude",
+   "-I../pal/include",
+   "-specs=nano.specs",
+   "-nostdlib",
+   "-g",
+   "-c",
+   "-mfpu=fpv5-d16",
+   "-mfloat-abi=hard",
+   "-MT",
+   "/home/gireesh/playground/embedded/pal/lib/lcd/.build/lcd.o",
+   "-MMD",
+   "-MP",
+   "-MF",
+   "/home/gireesh/playground/embedded/pal/lib/lcd/.build/lcd.d",
+   "-o",
+   "/home/gireesh/playground/embedded/pal/lib/lcd/.build/lcd.o",
+   "src/lcd.c"
+  ],
+  "file": "src/lcd.c"
+ }
+]

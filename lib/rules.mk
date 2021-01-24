@@ -9,7 +9,7 @@ AR_FLAGS=rc
 INCLUDE_DIR+=$(addprefix $(LIB_DIR)/, $(addsuffix /include, $(LIBS)))
 
 CFLAGS=-mcpu=$(MARCH) -mthumb -std=gnu17  -Wall $(addprefix -I, $(INCLUDE_DIR))\
-		   -nostdlib -g -c -mfpu=fpv5-d16 -mfloat-abi=hard
+		   -specs=nano.specs -nostdlib -g -c -mfpu=fpv5-d16 -mfloat-abi=hard
 AFLAGS= -mcpu=$(MARCH) -mthumb -g --warn -c
 
 TARGET=$(LIB_DIR)/target/$(MODE)
