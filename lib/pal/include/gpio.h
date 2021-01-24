@@ -673,3 +673,10 @@ typedef struct {                                /*!< (@ 0x40020000) GPIOA Struct
 #define GPIO_BRR_BR14_Msk                (0x4000UL)                /*!< BR14 (Bitfield-Mask: 0x01)                            */
 #define GPIO_BRR_BR15_Pos                (15UL)                    /*!< BR15 (Bit 15)                                         */
 #define GPIO_BRR_BR15_Msk                (0x8000UL)                /*!< BR15 (Bitfield-Mask: 0x01)                            */
+
+
+/* ================================= Custom defines ==========================================================================*/
+#define GPIO_MODE_INPUT                 (0b0UL)
+#define GPIO_MODE_OUTPUT                (0b1UL)
+#define GPIO_MODE_ALTERNATE_F           (0b10UL)
+#define GPIO_MODE_ANALOG                (0b11UL)
