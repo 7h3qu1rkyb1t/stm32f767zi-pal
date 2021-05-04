@@ -12,7 +12,6 @@ int main(){
     __asm__("ldr r4, [r6, #0xc]!");
     while(1){
         GPIOB->ODR_b.ODR7 ^= SET;
-        /* for(int i=0; i<1000000; i++); */
-        /* call(); */
+		for(int i=0; i<1000000; i++);
     }
 }

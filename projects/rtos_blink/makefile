@@ -7,7 +7,7 @@ TARGET_DIR:=$(CURDIR)/target/$(MODE)
 INCLUDE_DIR:=$(CURDIR)/include
 SRC_DIR:=$(CURDIR)/src
 LIB_DIR:=$(CURDIR)/../../lib
-FREERTOS_DIR:=/home/gireesh/programs/FreeRTOSv202012.00/FreeRTOS/Source
+FREERTOS_DIR:=$(XDG_LIB_DIR)/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel
 
 INCLUDE_DIR+=$(FREERTOS_DIR)/include
 SRCS=tasks.c queue.c list.c port.c heap_4.c timers.c

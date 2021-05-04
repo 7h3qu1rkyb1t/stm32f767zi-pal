@@ -5,4 +5,5 @@ projects/test
 lib/target/
 *.[oa]
 .build/
-
+.cache/
+compile_commands.json
