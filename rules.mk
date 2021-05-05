@@ -35,13 +35,13 @@ DEP_FILES:= $(addprefix $(DEP_DIR)/, $(addsuffix .d, $(notdir $(basename $(SRCS)
 OC_FLAGS=-O binary
 FL_FLAGS=--reset write $< 0x8000000
 
-.PHONY: clean test  all
+.PHONY: clean debug  all
 
 all: $(TARGET_DIR)/$(PROJECT).elf
 	@echo ============$(notdir $<)=========================
 	@$(SIZE) $<
 
-test:
+debug:
 	@echo ==========================================================================
 	@echo project target dir: $(TARGET_DIR)
 	@echo ==========================================================================
@@ -69,7 +69,11 @@ test:
 	@echo ==========================================================================
 	@echo uC-TCP-IP dir: $(uC_TCPIP_DIR)
 	@echo ==========================================================================
-
+	@echo MODE: $(MODE)
+	@echo ==========================================================================
+	@echo libs: $(LIBS)
+	@echo ==========================================================================
+	@echo libs: $(OBJS)
 
 
 $(TARGET_DIR)/build/%.o: %.c $(DEP_DIR)/%.d \
@@ -108,9 +112,9 @@ clean_all:
 $(TARGET_DIR)/$(PROJECT).bin: $(PROJECT).elf
 	$(OC) $< $(OC_FLAGS) $@
 
-debug: $(PROJECT).elf $(GDB_CONFIG)
+gdb: $(PROJECT).elf $(GDB_CONFIG)
 	$(GDB) -q -x $(GDB_CONFIG) $<  
 
 flash: $(PROJECT).bin
-	pkill openocd || true
+	@pkill openocd || true
 	$(FLASH) $(FL_FLAGS) 
