@@ -3,7 +3,7 @@
 
 #define SYSCFG_BASE                 0x40013800UL
 
-#define SYSCFG                      ((SYSCFG_Type*)            SYSCFG_BASE)
+#define SYSCFG                      ((volatile SYSCFG_Type*)            SYSCFG_BASE)
 
 
 /* =========================================================================================================================== */

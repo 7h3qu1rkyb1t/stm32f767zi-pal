@@ -3,7 +3,7 @@
 
 #define IWDG_BASE                   0x40003000UL
 
-#define IWDG                        ((IWDG_Type*)              IWDG_BASE)
+#define IWDG                        ((volatile IWDG_Type*)              IWDG_BASE)
 
 
 /* =========================================================================================================================== */

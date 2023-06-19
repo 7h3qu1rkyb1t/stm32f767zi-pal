@@ -5,9 +5,9 @@
 #define CAN2_BASE                   0x40006800UL
 #define CAN3_BASE                   0x40003400UL
 
-#define CAN1                        ((CAN1_Type*)              CAN1_BASE)
-#define CAN2                        ((CAN1_Type*)              CAN2_BASE)
-#define CAN3                        ((CAN1_Type*)              CAN3_BASE)
+#define CAN1                        ((volatile CAN1_Type*)              CAN1_BASE)
+#define CAN2                        ((volatile CAN1_Type*)              CAN2_BASE)
+#define CAN3                        ((volatile CAN1_Type*)              CAN3_BASE)
 
 
 /* =========================================================================================================================== */

@@ -1,7 +1,7 @@
 #include "core.h"
 
 #define PF_BASE                     0xE000ED78UL
-#define PF                          ((PF_Type*)                PF_BASE)
+#define PF                          ((volatile PF_Type*)                PF_BASE)
 
 
 /* =========================================================================================================================== */

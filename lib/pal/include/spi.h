@@ -9,12 +9,12 @@
 #define SPI3_BASE                   0x40003C00UL
 #define SPI6_BASE                   0x40015400UL
 
-#define SPI1                        ((SPI1_Type*)              SPI1_BASE)
-#define SPI2                        ((SPI1_Type*)              SPI2_BASE)
-#define SPI4                        ((SPI1_Type*)              SPI4_BASE)
-#define SPI5                        ((SPI1_Type*)              SPI5_BASE)
-#define SPI3                        ((SPI1_Type*)              SPI3_BASE)
-#define SPI6                        ((SPI1_Type*)              SPI6_BASE)
+#define SPI1                        ((volatile SPI1_Type*)              SPI1_BASE)
+#define SPI2                        ((volatile SPI1_Type*)              SPI2_BASE)
+#define SPI4                        ((volatile SPI1_Type*)              SPI4_BASE)
+#define SPI5                        ((volatile SPI1_Type*)              SPI5_BASE)
+#define SPI3                        ((volatile SPI1_Type*)              SPI3_BASE)
+#define SPI6                        ((volatile SPI1_Type*)              SPI6_BASE)
 
 
 /* =========================================================================================================================== */

@@ -1,7 +1,7 @@
 #include "core.h"
 
 #define STK_BASE                    0xE000E010UL
-#define STK                         ((STK_Type*)               STK_BASE)
+#define STK                         ((volatile STK_Type*)               STK_BASE)
 
 
 /* =========================================================================================================================== */

@@ -9,14 +9,14 @@
 #define OTG_HS_DEVICE_BASE          0x40040800UL
 #define OTG_HS_PWRCLK_BASE          0x40040E00UL
 
-#define OTG_FS_HOST                 ((OTG_FS_HOST_Type*)       OTG_FS_HOST_BASE)
-#define OTG_FS_DEVICE               ((OTG_FS_DEVICE_Type*)     OTG_FS_DEVICE_BASE)
-#define OTG_FS_PWRCLK               ((OTG_FS_PWRCLK_Type*)     OTG_FS_PWRCLK_BASE)
-#define OTG_HS_HOST                 ((OTG_HS_HOST_Type*)       OTG_HS_HOST_BASE)
-#define OTG_HS_DEVICE               ((OTG_HS_DEVICE_Type*)     OTG_HS_DEVICE_BASE)
-#define OTG_HS_PWRCLK               ((OTG_HS_PWRCLK_Type*)     OTG_HS_PWRCLK_BASE)
-#define OTG_FS_GLOBAL               ((OTG_FS_GLOBAL_Type*)     OTG_FS_GLOBAL_BASE)
-#define OTG_HS_GLOBAL               ((OTG_HS_GLOBAL_Type*)     OTG_HS_GLOBAL_BASE)
+#define OTG_FS_HOST                 ((volatile OTG_FS_HOST_Type*)       OTG_FS_HOST_BASE)
+#define OTG_FS_DEVICE               ((volatile OTG_FS_DEVICE_Type*)     OTG_FS_DEVICE_BASE)
+#define OTG_FS_PWRCLK               ((volatile OTG_FS_PWRCLK_Type*)     OTG_FS_PWRCLK_BASE)
+#define OTG_HS_HOST                 ((volatile OTG_HS_HOST_Type*)       OTG_HS_HOST_BASE)
+#define OTG_HS_DEVICE               ((volatile OTG_HS_DEVICE_Type*)     OTG_HS_DEVICE_BASE)
+#define OTG_HS_PWRCLK               ((volatile OTG_HS_PWRCLK_Type*)     OTG_HS_PWRCLK_BASE)
+#define OTG_FS_GLOBAL               ((volatile OTG_FS_GLOBAL_Type*)     OTG_FS_GLOBAL_BASE)
+#define OTG_HS_GLOBAL               ((volatile OTG_HS_GLOBAL_Type*)     OTG_HS_GLOBAL_BASE)
 
 /* =========================================================================================================================== */
 /* ================                                       OTG_HS_PWRCLK                                       ================ */

@@ -1,7 +1,7 @@
 #include "core.h"
 
 #define JPEG_BASE                   0x50051000UL
-#define JPEG                        ((JPEG_Type*)              JPEG_BASE)
+#define JPEG                        ((volatile JPEG_Type*)              JPEG_BASE)
 
 /* =========================================================================================================================== */
 /* ================                                           JPEG                                            ================ */

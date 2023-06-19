@@ -5,10 +5,10 @@
 #define I2C3_BASE                   0x40005C00UL
 #define I2C4_BASE                   0x40006000UL
 
-#define I2C1                        ((I2C1_Type*)              I2C1_BASE)
-#define I2C2                        ((I2C1_Type*)              I2C2_BASE)
-#define I2C3                        ((I2C1_Type*)              I2C3_BASE)
-#define I2C4                        ((I2C1_Type*)              I2C4_BASE)
+#define I2C1                        ((volatile I2C1_Type*)              I2C1_BASE)
+#define I2C2                        ((volatile I2C1_Type*)              I2C2_BASE)
+#define I2C3                        ((volatile I2C1_Type*)              I2C3_BASE)
+#define I2C4                        ((volatile I2C1_Type*)              I2C4_BASE)
 
 
 /* =========================================================================================================================== */

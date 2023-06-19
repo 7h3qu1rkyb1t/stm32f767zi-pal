@@ -4,8 +4,8 @@
 #define SAI1_BASE                   0x40015800UL
 #define SAI2_BASE                   0x40015C00UL
 
-#define SAI1                        ((SAI1_Type*)              SAI1_BASE)
-#define SAI2                        ((SAI1_Type*)              SAI2_BASE)
+#define SAI1                        ((volatile SAI1_Type*)              SAI1_BASE)
+#define SAI2                        ((volatile SAI1_Type*)              SAI2_BASE)
 
 
 /* =========================================================================================================================== */

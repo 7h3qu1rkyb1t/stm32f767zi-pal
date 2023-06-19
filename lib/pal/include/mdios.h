@@ -1,7 +1,7 @@
 #include "core.h"
 
 #define MDIOS_BASE                  0x40017800UL
-#define MDIOS                       ((MDIOS_Type*)             MDIOS_BASE)
+#define MDIOS                       ((volatile MDIOS_Type*)             MDIOS_BASE)
 
 
 /* =========================================================================================================================== */

@@ -4,8 +4,8 @@
 #define SDMMC1_BASE                 0x40012C00UL
 #define SDMMC2_BASE                 0x40011C00UL
 
-#define SDMMC1                      ((SDMMC1_Type*)            SDMMC1_BASE)
-#define SDMMC2                      ((SDMMC1_Type*)            SDMMC2_BASE)
+#define SDMMC1                      ((volatile SDMMC1_Type*)            SDMMC1_BASE)
+#define SDMMC2                      ((volatile SDMMC1_Type*)            SDMMC2_BASE)
 
 
 /* =========================================================================================================================== */

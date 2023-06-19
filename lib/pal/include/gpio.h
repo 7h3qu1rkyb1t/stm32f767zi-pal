@@ -13,17 +13,17 @@
 #define GPIOB_BASE                  0x40020400UL
 #define GPIOA_BASE                  0x40020000UL
 
-#define GPIOD                       ((GPIO_Type*)             GPIOD_BASE)
-#define GPIOC                       ((GPIO_Type*)             GPIOC_BASE)
-#define GPIOK                       ((GPIO_Type*)             GPIOK_BASE)
-#define GPIOJ                       ((GPIO_Type*)             GPIOJ_BASE)
-#define GPIOI                       ((GPIO_Type*)             GPIOI_BASE)
-#define GPIOH                       ((GPIO_Type*)             GPIOH_BASE)
-#define GPIOG                       ((GPIO_Type*)             GPIOG_BASE)
-#define GPIOF                       ((GPIO_Type*)             GPIOF_BASE)
-#define GPIOE                       ((GPIO_Type*)             GPIOE_BASE)
-#define GPIOB                       ((GPIO_Type*)             GPIOB_BASE)
-#define GPIOA                       ((GPIO_Type*)             GPIOA_BASE)
+#define GPIOD                       ((volatile GPIO_Type*)             GPIOD_BASE)
+#define GPIOC                       ((volatile GPIO_Type*)             GPIOC_BASE)
+#define GPIOK                       ((volatile GPIO_Type*)             GPIOK_BASE)
+#define GPIOJ                       ((volatile GPIO_Type*)             GPIOJ_BASE)
+#define GPIOI                       ((volatile GPIO_Type*)             GPIOI_BASE)
+#define GPIOH                       ((volatile GPIO_Type*)             GPIOH_BASE)
+#define GPIOG                       ((volatile GPIO_Type*)             GPIOG_BASE)
+#define GPIOF                       ((volatile GPIO_Type*)             GPIOF_BASE)
+#define GPIOE                       ((volatile GPIO_Type*)             GPIOE_BASE)
+#define GPIOB                       ((volatile GPIO_Type*)             GPIOB_BASE)
+#define GPIOA                       ((volatile GPIO_Type*)             GPIOA_BASE)
 
 
 /* =========================================================================================================================== */

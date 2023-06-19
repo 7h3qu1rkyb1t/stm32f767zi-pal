@@ -3,7 +3,7 @@
 
 #define SPDIFRX_BASE                0x40004000UL
 
-#define SPDIFRX                     ((SPDIFRX_Type*)           SPDIFRX_BASE)
+#define SPDIFRX                     ((volatile SPDIFRX_Type*)           SPDIFRX_BASE)
 
 
 /* =========================================================================================================================== */

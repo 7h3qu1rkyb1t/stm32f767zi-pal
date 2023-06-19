@@ -1,9 +1,9 @@
 #include "core.h"
 
 
-#define ADC1                        ((ADC1_Type*)              ADC1_BASE)
-#define ADC2                        ((ADC1_Type*)              ADC2_BASE)
-#define ADC3                        ((ADC1_Type*)              ADC3_BASE)
+#define ADC1                        ((volatile ADC1_Type*)              ADC1_BASE)
+#define ADC2                        ((volatile ADC1_Type*)              ADC2_BASE)
+#define ADC3                        ((volatile ADC1_Type*)              ADC3_BASE)
 
 #define ADC1_BASE                   0x40012000UL
 #define ADC2_BASE                   0x40012100UL

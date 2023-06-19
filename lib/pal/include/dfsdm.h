@@ -1,6 +1,6 @@
 #include "core.h"
 
-#define DFSDM                       ((DFSDM_Type*)             DFSDM_BASE)
+#define DFSDM                       ((volatile DFSDM_Type*)             DFSDM_BASE)
 #define DFSDM_BASE                  0x40017400UL
 
 

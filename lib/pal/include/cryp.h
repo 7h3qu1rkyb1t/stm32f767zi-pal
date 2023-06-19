@@ -3,7 +3,7 @@
 
 #define CRYP_BASE                   0x50060000UL
 
-#define CRYP                        ((CRYP_Type*)              CRYP_BASE)
+#define CRYP                        ((volatile CRYP_Type*)              CRYP_BASE)
 
 
 /* =========================================================================================================================== */

@@ -5,10 +5,10 @@
 #define Ethernet_DMA_BASE           0x40029000UL
 #define Ethernet_MAC_BASE           0x40028000UL
 
-#define Ethernet_MAC                ((Ethernet_MAC_Type*)      Ethernet_MAC_BASE)
-#define Ethernet_MMC                ((Ethernet_MMC_Type*)      Ethernet_MMC_BASE)
-#define Ethernet_PTP                ((Ethernet_PTP_Type*)      Ethernet_PTP_BASE)
-#define Ethernet_DMA                ((Ethernet_DMA_Type*)      Ethernet_DMA_BASE)
+#define Ethernet_MAC                ((volatile Ethernet_MAC_Type*)      Ethernet_MAC_BASE)
+#define Ethernet_MMC                ((volatile Ethernet_MMC_Type*)      Ethernet_MMC_BASE)
+#define Ethernet_PTP                ((volatile Ethernet_PTP_Type*)      Ethernet_PTP_BASE)
+#define Ethernet_DMA                ((volatile Ethernet_DMA_Type*)      Ethernet_DMA_BASE)
 
 
 /* =========================================================================================================================== */

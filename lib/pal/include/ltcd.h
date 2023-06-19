@@ -1,7 +1,7 @@
 #include "core.h"
 
 
-#define LTCD                        ((LTCD_Type*)              LTCD_BASE)
+#define LTCD                        ((volatile LTCD_Type*)              LTCD_BASE)
 
 #define LTCD_BASE                   0x40016800UL
 

@@ -3,7 +3,7 @@
 
 #define EXTI_BASE                   0x40013C00UL
 
-#define EXTI                        ((EXTI_Type*)              EXTI_BASE)
+#define EXTI                        ((volatile EXTI_Type*)              EXTI_BASE)
 
 
 /* =========================================================================================================================== */

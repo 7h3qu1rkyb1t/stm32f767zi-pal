@@ -1,7 +1,7 @@
 #include "core.h"
 
 #define AC_BASE                     0xE000EF90UL
-#define AC                          ((AC_Type*)                AC_BASE)
+#define AC                          ((volatile AC_Type*)                AC_BASE)
 
 
 /* =========================================================================================================================== */

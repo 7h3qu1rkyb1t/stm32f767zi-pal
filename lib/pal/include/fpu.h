@@ -1,10 +1,10 @@
 #include "core.h"
 
 #define FPU_CPACR_BASE              0xE000ED88UL
-#define FPU_CPACR                   ((FPU_CPACR_Type*)         FPU_CPACR_BASE)
+#define FPU_CPACR                   ((volatile FPU_CPACR_Type*)         FPU_CPACR_BASE)
 
 #define FPU_BASE                    0xE000EF34UL
-#define FPU                         ((FPU_Type*)               FPU_BASE)
+#define FPU                         ((volatile FPU_Type*)               FPU_BASE)
 
 /* =========================================================================================================================== */
 /* ================                                            FPU                                            ================ */

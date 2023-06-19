@@ -3,7 +3,7 @@
 
 #define QUADSPI_BASE                0xA0001000UL
 
-#define QUADSPI                     ((QUADSPI_Type*)           QUADSPI_BASE)
+#define QUADSPI                     ((volatile QUADSPI_Type*)           QUADSPI_BASE)
 
 
 /* =========================================================================================================================== */

@@ -1,10 +1,10 @@
 #include "core.h"
 
 #define SCB_ACTRL_BASE              0xE000E008UL
-#define SCB_ACTRL                   ((SCB_ACTRL_Type*)         SCB_ACTRL_BASE)
+#define SCB_ACTRL                   ((volatile SCB_ACTRL_Type*)         SCB_ACTRL_BASE)
 
 #define SCB_BASE                    0xE000ED00UL
-#define SCB                         ((SCB_Type*)               SCB_BASE)
+#define SCB                         ((volatile SCB_Type*)               SCB_BASE)
 
 
 /* =========================================================================================================================== */

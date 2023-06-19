@@ -3,7 +3,7 @@
 
 #define HASH_BASE                   0x50060400UL
 
-#define HASH                        ((HASH_Type*)              HASH_BASE)
+#define HASH                        ((volatile HASH_Type*)              HASH_BASE)
 
 
 /* =========================================================================================================================== */

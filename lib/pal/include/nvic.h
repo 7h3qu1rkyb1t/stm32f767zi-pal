@@ -2,8 +2,8 @@
 
 #define NVIC_BASE                   0xE000E100UL
 #define NVIC_STIR_BASE              0xE000EF00UL
-#define NVIC                        ((NVIC_Type*)              NVIC_BASE)
-#define NVIC_STIR                   ((NVIC_STIR_Type*)         NVIC_STIR_BASE)
+#define NVIC                        ((volatile NVIC_Type*)              NVIC_BASE)
+#define NVIC_STIR                   ((volatile NVIC_STIR_Type*)         NVIC_STIR_BASE)
 /* =========================================================================================================================== */
 /* ================                                Interrupt Number Definition                                ================ */
 /* =========================================================================================================================== */

@@ -1,7 +1,7 @@
 #include "core.h"
 
 #define DBGMCU_BASE                 0xE0042000UL
-#define DBGMCU                      ((DBGMCU_Type*)            DBGMCU_BASE)
+#define DBGMCU                      ((volatile DBGMCU_Type*)            DBGMCU_BASE)
 
 /* =========================================================================================================================== */
 /* ================                                          DBGMCU                                           ================ */

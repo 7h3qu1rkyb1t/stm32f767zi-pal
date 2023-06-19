@@ -3,7 +3,7 @@
 
 #define Flash_BASE                  0x40023C00UL
 
-#define Flash                       ((Flash_Type*)             Flash_BASE)
+#define Flash                       ((volatile Flash_Type*)             Flash_BASE)
 
 
 /* =========================================================================================================================== */

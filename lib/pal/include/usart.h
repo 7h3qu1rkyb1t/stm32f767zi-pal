@@ -1,12 +1,12 @@
 #include "core.h"
-#define USART6                      ((USART6_Type*)            USART6_BASE)
-#define USART1                      ((USART6_Type*)            USART1_BASE)
-#define USART3                      ((USART6_Type*)            USART3_BASE)
-#define USART2                      ((USART6_Type*)            USART2_BASE)
-#define UART5                       ((USART6_Type*)            UART5_BASE)
-#define UART4                       ((USART6_Type*)            UART4_BASE)
-#define UART8                       ((USART6_Type*)            UART8_BASE)
-#define UART7                       ((USART6_Type*)            UART7_BASE)
+#define USART6                      ((volatile USART6_Type*)            USART6_BASE)
+#define USART1                      ((volatile USART6_Type*)            USART1_BASE)
+#define USART3                      ((volatile USART6_Type*)            USART3_BASE)
+#define USART2                      ((volatile USART6_Type*)            USART2_BASE)
+#define UART5                       ((volatile USART6_Type*)            UART5_BASE)
+#define UART4                       ((volatile USART6_Type*)            UART4_BASE)
+#define UART8                       ((volatile USART6_Type*)            UART8_BASE)
+#define UART7                       ((volatile USART6_Type*)            UART7_BASE)
 
 #define USART6_BASE                 0x40011400UL
 #define USART1_BASE                 0x40011000UL

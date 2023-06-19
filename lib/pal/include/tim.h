@@ -16,21 +16,21 @@
 #define TIM6_BASE                   0x40001000UL
 #define TIM7_BASE                   0x40001400UL
 
-#define TIM1                        ((TIM1_Type*)              TIM1_BASE)
-#define TIM8                        ((TIM1_Type*)              TIM8_BASE)
-#define TIM2                        ((TIM2_Type*)              TIM2_BASE)
-#define TIM3                        ((TIM3_Type*)              TIM3_BASE)
-#define TIM4                        ((TIM4_Type*)              TIM4_BASE)
-#define TIM5                        ((TIM4_Type*)              TIM5_BASE)
-#define TIM9                        ((TIM9_Type*)              TIM9_BASE)
-#define TIM12                       ((TIM9_Type*)              TIM12_BASE)
-#define TIM10                       ((TIM10_Type*)             TIM10_BASE)
-#define TIM11                       ((TIM10_Type*)             TIM11_BASE)
-#define TIM13                       ((TIM10_Type*)             TIM13_BASE)
-#define TIM14                       ((TIM10_Type*)             TIM14_BASE)
-#define TIM6                        ((TIM6_Type*)              TIM6_BASE)
-#define TIM7                        ((TIM6_Type*)              TIM7_BASE)
-#define LPTIM1                      ((LPTIM1_Type*)            LPTIM1_BASE)
+#define TIM1                        ((volatile TIM1_Type*)              TIM1_BASE)
+#define TIM8                        ((volatile TIM1_Type*)              TIM8_BASE)
+#define TIM2                        ((volatile TIM2_Type*)              TIM2_BASE)
+#define TIM3                        ((volatile TIM3_Type*)              TIM3_BASE)
+#define TIM4                        ((volatile TIM4_Type*)              TIM4_BASE)
+#define TIM5                        ((volatile TIM4_Type*)              TIM5_BASE)
+#define TIM9                        ((volatile TIM9_Type*)              TIM9_BASE)
+#define TIM12                       ((volatile TIM9_Type*)              TIM12_BASE)
+#define TIM10                       ((volatile TIM10_Type*)             TIM10_BASE)
+#define TIM11                       ((volatile TIM10_Type*)             TIM11_BASE)
+#define TIM13                       ((volatile TIM10_Type*)             TIM13_BASE)
+#define TIM14                       ((volatile TIM10_Type*)             TIM14_BASE)
+#define TIM6                        ((volatile TIM6_Type*)              TIM6_BASE)
+#define TIM7                        ((volatile TIM6_Type*)              TIM7_BASE)
+#define LPTIM1                      ((volatile LPTIM1_Type*)            LPTIM1_BASE)
 
 
 /* =========================================================================================================================== */

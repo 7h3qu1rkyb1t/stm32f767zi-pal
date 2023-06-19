@@ -4,8 +4,8 @@
 #define DMA2_BASE                   0x40026400UL
 #define DMA1_BASE                   0x40026000UL
 
-#define DMA2                        ((DMA2_Type*)              DMA2_BASE)
-#define DMA1                        ((DMA2_Type*)              DMA1_BASE)
+#define DMA2                        ((volatile DMA2_Type*)              DMA2_BASE)
+#define DMA1                        ((volatile DMA2_Type*)              DMA1_BASE)
 
 
 /* =========================================================================================================================== */

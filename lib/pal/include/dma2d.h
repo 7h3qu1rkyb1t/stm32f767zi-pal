@@ -3,7 +3,7 @@
 
 #define DMA2D_BASE                  0x4002B000UL
 
-#define DMA2D                       ((DMA2D_Type*)             DMA2D_BASE)
+#define DMA2D                       ((volatile DMA2D_Type*)             DMA2D_BASE)
 
 
 /* =========================================================================================================================== */

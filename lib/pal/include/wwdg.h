@@ -2,7 +2,7 @@
 
 #define WWDG_BASE                   0x40002C00UL
 
-#define WWDG                        ((WWDG_Type*)              WWDG_BASE)
+#define WWDG                        ((volatile WWDG_Type*)              WWDG_BASE)
 
 
 /* =========================================================================================================================== */

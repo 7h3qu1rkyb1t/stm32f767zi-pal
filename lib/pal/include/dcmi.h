@@ -3,7 +3,7 @@
 
 #define DCMI_BASE                   0x50050000UL
 
-#define DCMI                        ((DCMI_Type*)              DCMI_BASE)
+#define DCMI                        ((volatile DCMI_Type*)              DCMI_BASE)
 
 
 /* =========================================================================================================================== */
